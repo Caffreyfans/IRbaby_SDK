@@ -7,7 +7,9 @@ CMakeFiles/irbaby.dir/src/download.c.o
  ../include/status_code.h
  /home/caffreyfans/git/IRbaby/irbaby_sdk/src/download.c
 CMakeFiles/irbaby.dir/src/irbaby.c.o
+ ../include/download.h
  ../include/irbaby.h
+ ../include/log.h
  ../include/port/storage.h
  ../include/status_code.h
  /home/caffreyfans/git/IRbaby/irbaby_sdk/src/irbaby.c

@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-06-06 16:30:33
+ * @LastEditTime: 2021-06-07 21:13:29
  * @Description: 
  */
 #include "download.h"
@@ -27,5 +27,5 @@ IRBABY_STATUS irbaby_download(const char *filename)
     if (http_client_send(&client)) {
         irbaby_write(filename, client.response.pBody, client.reponse.bodyLen);
     }
-    http_client_init(&client);
+    http_client_close(&client);
 }

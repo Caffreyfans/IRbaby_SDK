@@ -43,6 +43,12 @@ irbaby.h
 /home/caffreyfans/git/IRbaby/irbaby_sdk/src/irbaby.h
 port/storage.h
 /home/caffreyfans/git/IRbaby/irbaby_sdk/src/port/storage.h
+download.h
+/home/caffreyfans/git/IRbaby/irbaby_sdk/src/download.h
+stdlib.h
+-
+log.h
+/home/caffreyfans/git/IRbaby/irbaby_sdk/src/log.h
 
 /home/caffreyfans/git/IRbaby/irbaby_sdk/src/port/storage.c
 storage.h

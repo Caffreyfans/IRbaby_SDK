@@ -12,7 +12,7 @@
 		"commands" : 
 		[
 			"add_library",
-			"include_directories"
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -26,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 9,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 5,
+				"line" : 11,
 				"parent" : 0
 			}
 		]

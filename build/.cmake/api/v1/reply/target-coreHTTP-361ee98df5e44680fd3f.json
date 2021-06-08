@@ -13,13 +13,11 @@
 		[
 			"add_library",
 			"target_compile_options",
-			"include_directories",
 			"target_include_directories"
 		],
 		"files" : 
 		[
-			"3rdparty/coreHTTP/CMakeLists.txt",
-			"CMakeLists.txt"
+			"3rdparty/coreHTTP/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -39,16 +37,7 @@
 				"parent" : 0
 			},
 			{
-				"file" : 1
-			},
-			{
 				"command" : 2,
-				"file" : 1,
-				"line" : 5,
-				"parent" : 3
-			},
-			{
-				"command" : 3,
 				"file" : 0,
 				"line" : 16,
 				"parent" : 0
@@ -75,27 +64,19 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
-					"path" : "/home/caffreyfans/git/IRbaby/irbaby_sdk/include"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/caffreyfans/git/IRbaby/irbaby_sdk/include/port"
-				},
-				{
-					"backtrace" : 5,
+					"backtrace" : 3,
 					"path" : "/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 3,
 					"path" : "/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/interface"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 3,
 					"path" : "/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 3,
 					"path" : "/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser"
 				}
 			],

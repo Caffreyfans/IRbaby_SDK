@@ -6,5 +6,5 @@ C_FLAGS =   -DHTTP_DO_NOT_USE_CUSTOM_CONFIG=1 -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/caffreyfans/git/IRbaby/irbaby_sdk/include -I/home/caffreyfans/git/IRbaby/irbaby_sdk/include/port -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/include -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/interface -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/include -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser 
+C_INCLUDES = -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/include -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/interface -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/include -I/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser 
 

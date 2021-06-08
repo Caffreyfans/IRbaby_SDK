@@ -6,7 +6,9 @@ CMakeFiles/irbaby.dir/src/download.c.o: ../include/port/storage.h
 CMakeFiles/irbaby.dir/src/download.c.o: ../include/status_code.h
 CMakeFiles/irbaby.dir/src/download.c.o: ../src/download.c
 
+CMakeFiles/irbaby.dir/src/irbaby.c.o: ../include/download.h
 CMakeFiles/irbaby.dir/src/irbaby.c.o: ../include/irbaby.h
+CMakeFiles/irbaby.dir/src/irbaby.c.o: ../include/log.h
 CMakeFiles/irbaby.dir/src/irbaby.c.o: ../include/port/storage.h
 CMakeFiles/irbaby.dir/src/irbaby.c.o: ../include/status_code.h
 CMakeFiles/irbaby.dir/src/irbaby.c.o: ../src/irbaby.c

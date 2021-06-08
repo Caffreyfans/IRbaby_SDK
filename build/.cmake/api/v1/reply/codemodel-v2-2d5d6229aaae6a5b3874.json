@@ -73,14 +73,14 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "coreHTTP::@46ec43e00f0af2d32560",
-					"jsonFile" : "target-coreHTTP-10cf8e853950c84d9761.json",
+					"jsonFile" : "target-coreHTTP-361ee98df5e44680fd3f.json",
 					"name" : "coreHTTP",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "irbaby::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-irbaby-b3f45a83b67e07487b43.json",
+					"jsonFile" : "target-irbaby-c960e962558742857538.json",
 					"name" : "irbaby",
 					"projectIndex" : 0
 				}
