@@ -44,28 +44,32 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk
+CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk/build
+CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/irbaby.dir/all
 all: 3rdparty/all
+all: src/all
+all: test/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: 3rdparty/preinstall
+preinstall: src/preinstall
+preinstall: test/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/irbaby.dir/clean
 clean: 3rdparty/clean
+clean: src/clean
+clean: test/clean
 
 .PHONY : clean
 
@@ -106,31 +110,42 @@ clean: 3rdparty/clean
 .PHONY : 3rdparty/coreHTTP/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/irbaby.dir
+# Directory level rules for directory src
 
-# All Build rule for target.
-CMakeFiles/irbaby.dir/all:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/depend
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles --progress-num=5,6,7,8 "Built target irbaby"
-.PHONY : CMakeFiles/irbaby.dir/all
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/irbaby.dir/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/irbaby.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/irbaby.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles 0
-.PHONY : CMakeFiles/irbaby.dir/rule
+.PHONY : src/all
 
-# Convenience name for target.
-irbaby: CMakeFiles/irbaby.dir/rule
+# Recursive "preinstall" directory target.
+src/preinstall:
 
-.PHONY : irbaby
+.PHONY : src/preinstall
 
-# clean rule for target.
-CMakeFiles/irbaby.dir/clean:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/clean
-.PHONY : CMakeFiles/irbaby.dir/clean
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/irbaby.dir/clean
+
+.PHONY : src/clean
+
+#=============================================================================
+# Directory level rules for directory test
+
+# Recursive "all" directory target.
+test/all: test/CMakeFiles/download_test.dir/all
+test/all: test/CMakeFiles/http_test.dir/all
+
+.PHONY : test/all
+
+# Recursive "preinstall" directory target.
+test/preinstall:
+
+.PHONY : test/preinstall
+
+# Recursive "clean" directory target.
+test/clean: test/CMakeFiles/download_test.dir/clean
+test/clean: test/CMakeFiles/http_test.dir/clean
+
+.PHONY : test/clean
 
 #=============================================================================
 # Target rules for target 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir
@@ -139,14 +154,14 @@ CMakeFiles/irbaby.dir/clean:
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all:
 	$(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/depend
 	$(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles --progress-num=1,2,3,4 "Built target coreHTTP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=1,2,3,4 "Built target coreHTTP"
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
 
 # Build rule for subdir invocation for target.
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule
 
 # Convenience name for target.
@@ -158,6 +173,89 @@ coreHTTP: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/clean:
 	$(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/clean
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/irbaby.dir
+
+# All Build rule for target.
+src/CMakeFiles/irbaby.dir/all: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
+	$(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/depend
+	$(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=9,10,11,12 "Built target irbaby"
+.PHONY : src/CMakeFiles/irbaby.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/irbaby.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/irbaby.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/irbaby.dir/rule
+
+# Convenience name for target.
+irbaby: src/CMakeFiles/irbaby.dir/rule
+
+.PHONY : irbaby
+
+# clean rule for target.
+src/CMakeFiles/irbaby.dir/clean:
+	$(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/clean
+.PHONY : src/CMakeFiles/irbaby.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/download_test.dir
+
+# All Build rule for target.
+test/CMakeFiles/download_test.dir/all: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
+test/CMakeFiles/download_test.dir/all: src/CMakeFiles/irbaby.dir/all
+	$(MAKE) -f test/CMakeFiles/download_test.dir/build.make test/CMakeFiles/download_test.dir/depend
+	$(MAKE) -f test/CMakeFiles/download_test.dir/build.make test/CMakeFiles/download_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=5,6 "Built target download_test"
+.PHONY : test/CMakeFiles/download_test.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/download_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/download_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/download_test.dir/rule
+
+# Convenience name for target.
+download_test: test/CMakeFiles/download_test.dir/rule
+
+.PHONY : download_test
+
+# clean rule for target.
+test/CMakeFiles/download_test.dir/clean:
+	$(MAKE) -f test/CMakeFiles/download_test.dir/build.make test/CMakeFiles/download_test.dir/clean
+.PHONY : test/CMakeFiles/download_test.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/http_test.dir
+
+# All Build rule for target.
+test/CMakeFiles/http_test.dir/all: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
+test/CMakeFiles/http_test.dir/all: src/CMakeFiles/irbaby.dir/all
+	$(MAKE) -f test/CMakeFiles/http_test.dir/build.make test/CMakeFiles/http_test.dir/depend
+	$(MAKE) -f test/CMakeFiles/http_test.dir/build.make test/CMakeFiles/http_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=7,8 "Built target http_test"
+.PHONY : test/CMakeFiles/http_test.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/http_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/http_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/http_test.dir/rule
+
+# Convenience name for target.
+http_test: test/CMakeFiles/http_test.dir/rule
+
+.PHONY : http_test
+
+# clean rule for target.
+test/CMakeFiles/http_test.dir/clean:
+	$(MAKE) -f test/CMakeFiles/http_test.dir/build.make test/CMakeFiles/http_test.dir/clean
+.PHONY : test/CMakeFiles/http_test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

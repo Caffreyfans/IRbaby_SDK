@@ -46,19 +46,19 @@ transport_interface.h
 core_http_client.h
 ../3rdparty/coreHTTP/port/include/core_http_client.h
 
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c
 assert.h
 -
 string.h
 -
 core_http_client.h
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.h
 core_http_client_private.h
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client_private.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client_private.h
 
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c
 http_parser.h
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.h
 assert.h
 -
 stddef.h
@@ -70,7 +70,7 @@ string.h
 limits.h
 -
 
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.h
 stddef.h
 -
 BaseTsd.h
@@ -80,9 +80,9 @@ sys/inttypes.h
 stdint.h
 -
 
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c
 http_client.h
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/http_client.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/http_client.h
 sys/socket.h
 -
 sys/types.h
@@ -96,11 +96,11 @@ netinet/in.h
 arpa/inet.h
 -
 lwip/sockets.h
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/lwip/sockets.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/lwip/sockets.h
 lwip/dns.h
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/lwip/dns.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/lwip/dns.h
 http_parser.h
-/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/http_parser.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/http_parser.h
 string.h
 -
 stdlib.h

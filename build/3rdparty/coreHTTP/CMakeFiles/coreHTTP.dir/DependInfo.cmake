@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c" "/home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o"
-  "/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c" "/home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o"
-  "/home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c" "/home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o"
+  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o"
+  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o"
+  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

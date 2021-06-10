@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/download_test.dir/download_test.c.o  -o download_test  ../3rdparty/coreHTTP/libcoreHTTP.a ../src/libirbaby.a ../3rdparty/coreHTTP/libcoreHTTP.a 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP
+# Install script for directory: /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

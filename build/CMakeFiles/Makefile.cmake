@@ -13,6 +13,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
+  "../src/CMakeLists.txt"
+  "../test/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -45,10 +47,14 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "3rdparty/CMakeFiles/CMakeDirectoryInformation.cmake"
   "3rdparty/coreHTTP/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/irbaby.dir/DependInfo.cmake"
   "3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/DependInfo.cmake"
+  "src/CMakeFiles/irbaby.dir/DependInfo.cmake"
+  "test/CMakeFiles/download_test.dir/DependInfo.cmake"
+  "test/CMakeFiles/http_test.dir/DependInfo.cmake"
   )

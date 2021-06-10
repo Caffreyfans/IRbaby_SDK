@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk
+CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk/build
+CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build
 
 # Include any dependencies generated for this target.
 include 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/depend.make
@@ -59,42 +59,42 @@ include 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/flags.make
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/flags.make
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o: ../3rdparty/coreHTTP/coreHTTP/source/core_http_client.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o   -c /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o"
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o   -c /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.i"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c > CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c > CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.i
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.s"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c -o CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/core_http_client.c -o CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.s
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/flags.make
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o: ../3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o   -c /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o"
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o   -c /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c > CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c > CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c -o CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c -o CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/flags.make
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o: ../3rdparty/coreHTTP/port/http_client.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/coreHTTP.dir/port/http_client.c.o   -c /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o"
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/coreHTTP.dir/port/http_client.c.o   -c /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/coreHTTP.dir/port/http_client.c.i"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c > CMakeFiles/coreHTTP.dir/port/http_client.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c > CMakeFiles/coreHTTP.dir/port/http_client.c.i
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/coreHTTP.dir/port/http_client.c.s"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c -o CMakeFiles/coreHTTP.dir/port/http_client.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP/port/http_client.c -o CMakeFiles/coreHTTP.dir/port/http_client.c.s
 
 # Object files for target coreHTTP
 coreHTTP_OBJECTS = \
@@ -110,9 +110,9 @@ coreHTTP_EXTERNAL_OBJECTS =
 3rdparty/coreHTTP/libcoreHTTP.a: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o
 3rdparty/coreHTTP/libcoreHTTP.a: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make
 3rdparty/coreHTTP/libcoreHTTP.a: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libcoreHTTP.a"
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && $(CMAKE_COMMAND) -P CMakeFiles/coreHTTP.dir/cmake_clean_target.cmake
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/coreHTTP.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libcoreHTTP.a"
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && $(CMAKE_COMMAND) -P CMakeFiles/coreHTTP.dir/cmake_clean_target.cmake
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/coreHTTP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build: 3rdparty/coreHTTP/libcoreHTTP.a
@@ -120,10 +120,10 @@ coreHTTP_EXTERNAL_OBJECTS =
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/clean:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP && $(CMAKE_COMMAND) -P CMakeFiles/coreHTTP.dir/cmake_clean.cmake
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP && $(CMAKE_COMMAND) -P CMakeFiles/coreHTTP.dir/cmake_clean.cmake
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/clean
 
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/depend:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/caffreyfans/git/IRbaby/irbaby_sdk /home/caffreyfans/git/IRbaby/irbaby_sdk/3rdparty/coreHTTP /home/caffreyfans/git/IRbaby/irbaby_sdk/build /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/caffreyfans/git/IRbaby_dev/irbaby_sdk /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/coreHTTP /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/depend
 

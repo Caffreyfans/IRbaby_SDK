@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/irbaby.h
+status_code.h
+../include/status_code.h
+
+../include/status_code.h
+
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/test/download_test.c
+irbaby.h
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/test/irbaby.h
+

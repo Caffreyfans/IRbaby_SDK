@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk
+CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk/build
+CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles /home/caffreyfans/git/IRbaby/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/progress.marks
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles 0
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/progress.marks
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/clean
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/preinstall
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/preinstall
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ coreHTTP: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule
 
 # fast build rule for target.
 coreHTTP/fast:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build
 .PHONY : coreHTTP/fast
 
 coreHTTP/source/core_http_client.o: coreHTTP/source/core_http_client.c.o
@@ -131,7 +131,7 @@ coreHTTP/source/core_http_client.o: coreHTTP/source/core_http_client.c.o
 
 # target to build an object file
 coreHTTP/source/core_http_client.c.o:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.o
 .PHONY : coreHTTP/source/core_http_client.c.o
 
 coreHTTP/source/core_http_client.i: coreHTTP/source/core_http_client.c.i
@@ -140,7 +140,7 @@ coreHTTP/source/core_http_client.i: coreHTTP/source/core_http_client.c.i
 
 # target to preprocess a source file
 coreHTTP/source/core_http_client.c.i:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.i
 .PHONY : coreHTTP/source/core_http_client.c.i
 
 coreHTTP/source/core_http_client.s: coreHTTP/source/core_http_client.c.s
@@ -149,7 +149,7 @@ coreHTTP/source/core_http_client.s: coreHTTP/source/core_http_client.c.s
 
 # target to generate assembly for a file
 coreHTTP/source/core_http_client.c.s:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/core_http_client.c.s
 .PHONY : coreHTTP/source/core_http_client.c.s
 
 coreHTTP/source/dependency/3rdparty/http_parser/http_parser.o: coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o
@@ -158,7 +158,7 @@ coreHTTP/source/dependency/3rdparty/http_parser/http_parser.o: coreHTTP/source/d
 
 # target to build an object file
 coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o
 .PHONY : coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.o
 
 coreHTTP/source/dependency/3rdparty/http_parser/http_parser.i: coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i
@@ -167,7 +167,7 @@ coreHTTP/source/dependency/3rdparty/http_parser/http_parser.i: coreHTTP/source/d
 
 # target to preprocess a source file
 coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i
 .PHONY : coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i
 
 coreHTTP/source/dependency/3rdparty/http_parser/http_parser.s: coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s
@@ -176,7 +176,7 @@ coreHTTP/source/dependency/3rdparty/http_parser/http_parser.s: coreHTTP/source/d
 
 # target to generate assembly for a file
 coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s
 .PHONY : coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.s
 
 port/http_client.o: port/http_client.c.o
@@ -185,7 +185,7 @@ port/http_client.o: port/http_client.c.o
 
 # target to build an object file
 port/http_client.c.o:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.o
 .PHONY : port/http_client.c.o
 
 port/http_client.i: port/http_client.c.i
@@ -194,7 +194,7 @@ port/http_client.i: port/http_client.c.i
 
 # target to preprocess a source file
 port/http_client.c.i:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.i
 .PHONY : port/http_client.c.i
 
 port/http_client.s: port/http_client.c.s
@@ -203,7 +203,7 @@ port/http_client.s: port/http_client.c.s
 
 # target to generate assembly for a file
 port/http_client.c.s:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/port/http_client.c.s
 .PHONY : port/http_client.c.s
 
 # Help Target
@@ -235,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/caffreyfans/git/IRbaby/irbaby_sdk/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

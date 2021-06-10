@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk
+CMAKE_SOURCE_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby/irbaby_sdk/build
+CMAKE_BINARY_DIR = /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby/irbaby_sdk/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named irbaby
-
-# Build rule for target.
-irbaby: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 irbaby
-.PHONY : irbaby
-
-# fast build rule for target.
-irbaby/fast:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/build
-.PHONY : irbaby/fast
-
-#=============================================================================
 # Target rules for targets named coreHTTP
 
 # Build rule for target.
@@ -136,86 +123,44 @@ coreHTTP/fast:
 	$(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build
 .PHONY : coreHTTP/fast
 
-src/download.o: src/download.c.o
+#=============================================================================
+# Target rules for targets named irbaby
 
-.PHONY : src/download.o
+# Build rule for target.
+irbaby: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 irbaby
+.PHONY : irbaby
 
-# target to build an object file
-src/download.c.o:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/download.c.o
-.PHONY : src/download.c.o
+# fast build rule for target.
+irbaby/fast:
+	$(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/build
+.PHONY : irbaby/fast
 
-src/download.i: src/download.c.i
+#=============================================================================
+# Target rules for targets named download_test
 
-.PHONY : src/download.i
+# Build rule for target.
+download_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 download_test
+.PHONY : download_test
 
-# target to preprocess a source file
-src/download.c.i:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/download.c.i
-.PHONY : src/download.c.i
+# fast build rule for target.
+download_test/fast:
+	$(MAKE) -f test/CMakeFiles/download_test.dir/build.make test/CMakeFiles/download_test.dir/build
+.PHONY : download_test/fast
 
-src/download.s: src/download.c.s
+#=============================================================================
+# Target rules for targets named http_test
 
-.PHONY : src/download.s
+# Build rule for target.
+http_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 http_test
+.PHONY : http_test
 
-# target to generate assembly for a file
-src/download.c.s:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/download.c.s
-.PHONY : src/download.c.s
-
-src/irbaby.o: src/irbaby.c.o
-
-.PHONY : src/irbaby.o
-
-# target to build an object file
-src/irbaby.c.o:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/irbaby.c.o
-.PHONY : src/irbaby.c.o
-
-src/irbaby.i: src/irbaby.c.i
-
-.PHONY : src/irbaby.i
-
-# target to preprocess a source file
-src/irbaby.c.i:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/irbaby.c.i
-.PHONY : src/irbaby.c.i
-
-src/irbaby.s: src/irbaby.c.s
-
-.PHONY : src/irbaby.s
-
-# target to generate assembly for a file
-src/irbaby.c.s:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/irbaby.c.s
-.PHONY : src/irbaby.c.s
-
-src/port/storage.o: src/port/storage.c.o
-
-.PHONY : src/port/storage.o
-
-# target to build an object file
-src/port/storage.c.o:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/port/storage.c.o
-.PHONY : src/port/storage.c.o
-
-src/port/storage.i: src/port/storage.c.i
-
-.PHONY : src/port/storage.i
-
-# target to preprocess a source file
-src/port/storage.c.i:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/port/storage.c.i
-.PHONY : src/port/storage.c.i
-
-src/port/storage.s: src/port/storage.c.s
-
-.PHONY : src/port/storage.s
-
-# target to generate assembly for a file
-src/port/storage.c.s:
-	$(MAKE) -f CMakeFiles/irbaby.dir/build.make CMakeFiles/irbaby.dir/src/port/storage.c.s
-.PHONY : src/port/storage.c.s
+# fast build rule for target.
+http_test/fast:
+	$(MAKE) -f test/CMakeFiles/http_test.dir/build.make test/CMakeFiles/http_test.dir/build
+.PHONY : http_test/fast
 
 # Help Target
 help:
@@ -225,17 +170,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... irbaby"
 	@echo "... coreHTTP"
-	@echo "... src/download.o"
-	@echo "... src/download.i"
-	@echo "... src/download.s"
-	@echo "... src/irbaby.o"
-	@echo "... src/irbaby.i"
-	@echo "... src/irbaby.s"
-	@echo "... src/port/storage.o"
-	@echo "... src/port/storage.i"
-	@echo "... src/port/storage.s"
+	@echo "... irbaby"
+	@echo "... download_test"
+	@echo "... http_test"
 .PHONY : help
 
 
