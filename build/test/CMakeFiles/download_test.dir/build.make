@@ -82,6 +82,7 @@ test/download_test: test/CMakeFiles/download_test.dir/build.make
 test/download_test: 3rdparty/coreHTTP/libcoreHTTP.a
 test/download_test: src/libirbaby.a
 test/download_test: 3rdparty/coreHTTP/libcoreHTTP.a
+test/download_test: 3rdparty/IRext/libIRext.a
 test/download_test: test/CMakeFiles/download_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable download_test"
 	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/download_test.dir/link.txt --verbose=$(VERBOSE)

@@ -12,6 +12,10 @@ src/CMakeFiles/irbaby.dir/download.c.o: ../include/status_code.h
 src/CMakeFiles/irbaby.dir/download.c.o: ../include/types.h
 src/CMakeFiles/irbaby.dir/download.c.o: ../src/download.c
 
+src/CMakeFiles/irbaby.dir/irbaby.c.o: ../3rdparty/IRext/include/ir_ac_control.h
+src/CMakeFiles/irbaby.dir/irbaby.c.o: ../3rdparty/IRext/include/ir_decode.h
+src/CMakeFiles/irbaby.dir/irbaby.c.o: ../3rdparty/IRext/include/ir_defs.h
+src/CMakeFiles/irbaby.dir/irbaby.c.o: ../3rdparty/IRext/include/ir_tv_control.h
 src/CMakeFiles/irbaby.dir/irbaby.c.o: ../3rdparty/coreHTTP/coreHTTP/source/include/core_http_client.h
 src/CMakeFiles/irbaby.dir/irbaby.c.o: ../3rdparty/coreHTTP/coreHTTP/source/include/core_http_config_defaults.h
 src/CMakeFiles/irbaby.dir/irbaby.c.o: ../3rdparty/coreHTTP/coreHTTP/source/interface/transport_interface.h

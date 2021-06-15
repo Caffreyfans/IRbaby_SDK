@@ -78,18 +78,39 @@ clean: test/clean
 
 # Recursive "all" directory target.
 3rdparty/all: 3rdparty/coreHTTP/all
+3rdparty/all: 3rdparty/IRext/all
 
 .PHONY : 3rdparty/all
 
 # Recursive "preinstall" directory target.
 3rdparty/preinstall: 3rdparty/coreHTTP/preinstall
+3rdparty/preinstall: 3rdparty/IRext/preinstall
 
 .PHONY : 3rdparty/preinstall
 
 # Recursive "clean" directory target.
 3rdparty/clean: 3rdparty/coreHTTP/clean
+3rdparty/clean: 3rdparty/IRext/clean
 
 .PHONY : 3rdparty/clean
+
+#=============================================================================
+# Directory level rules for directory 3rdparty/IRext
+
+# Recursive "all" directory target.
+3rdparty/IRext/all: 3rdparty/IRext/CMakeFiles/IRext.dir/all
+
+.PHONY : 3rdparty/IRext/all
+
+# Recursive "preinstall" directory target.
+3rdparty/IRext/preinstall:
+
+.PHONY : 3rdparty/IRext/preinstall
+
+# Recursive "clean" directory target.
+3rdparty/IRext/clean: 3rdparty/IRext/CMakeFiles/IRext.dir/clean
+
+.PHONY : 3rdparty/IRext/clean
 
 #=============================================================================
 # Directory level rules for directory 3rdparty/coreHTTP
@@ -154,7 +175,7 @@ test/clean: test/CMakeFiles/http_test.dir/clean
 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all:
 	$(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/depend
 	$(MAKE) -f 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build.make 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=1,2,3,4 "Built target coreHTTP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=13,14,15,16 "Built target coreHTTP"
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
 
 # Build rule for subdir invocation for target.
@@ -175,18 +196,46 @@ coreHTTP: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/rule
 .PHONY : 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/clean
 
 #=============================================================================
+# Target rules for target 3rdparty/IRext/CMakeFiles/IRext.dir
+
+# All Build rule for target.
+3rdparty/IRext/CMakeFiles/IRext.dir/all:
+	$(MAKE) -f 3rdparty/IRext/CMakeFiles/IRext.dir/build.make 3rdparty/IRext/CMakeFiles/IRext.dir/depend
+	$(MAKE) -f 3rdparty/IRext/CMakeFiles/IRext.dir/build.make 3rdparty/IRext/CMakeFiles/IRext.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target IRext"
+.PHONY : 3rdparty/IRext/CMakeFiles/IRext.dir/all
+
+# Build rule for subdir invocation for target.
+3rdparty/IRext/CMakeFiles/IRext.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 12
+	$(MAKE) -f CMakeFiles/Makefile2 3rdparty/IRext/CMakeFiles/IRext.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
+.PHONY : 3rdparty/IRext/CMakeFiles/IRext.dir/rule
+
+# Convenience name for target.
+IRext: 3rdparty/IRext/CMakeFiles/IRext.dir/rule
+
+.PHONY : IRext
+
+# clean rule for target.
+3rdparty/IRext/CMakeFiles/IRext.dir/clean:
+	$(MAKE) -f 3rdparty/IRext/CMakeFiles/IRext.dir/build.make 3rdparty/IRext/CMakeFiles/IRext.dir/clean
+.PHONY : 3rdparty/IRext/CMakeFiles/IRext.dir/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/irbaby.dir
 
 # All Build rule for target.
 src/CMakeFiles/irbaby.dir/all: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
+src/CMakeFiles/irbaby.dir/all: 3rdparty/IRext/CMakeFiles/IRext.dir/all
 	$(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/depend
 	$(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=9,10,11,12 "Built target irbaby"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=21,22,23,24 "Built target irbaby"
 .PHONY : src/CMakeFiles/irbaby.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/irbaby.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 20
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/irbaby.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/irbaby.dir/rule
@@ -206,15 +255,16 @@ src/CMakeFiles/irbaby.dir/clean:
 
 # All Build rule for target.
 test/CMakeFiles/download_test.dir/all: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
+test/CMakeFiles/download_test.dir/all: 3rdparty/IRext/CMakeFiles/IRext.dir/all
 test/CMakeFiles/download_test.dir/all: src/CMakeFiles/irbaby.dir/all
 	$(MAKE) -f test/CMakeFiles/download_test.dir/build.make test/CMakeFiles/download_test.dir/depend
 	$(MAKE) -f test/CMakeFiles/download_test.dir/build.make test/CMakeFiles/download_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=5,6 "Built target download_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=17,18 "Built target download_test"
 .PHONY : test/CMakeFiles/download_test.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/download_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 22
 	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/download_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/download_test.dir/rule
@@ -234,15 +284,16 @@ test/CMakeFiles/download_test.dir/clean:
 
 # All Build rule for target.
 test/CMakeFiles/http_test.dir/all: 3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/all
+test/CMakeFiles/http_test.dir/all: 3rdparty/IRext/CMakeFiles/IRext.dir/all
 test/CMakeFiles/http_test.dir/all: src/CMakeFiles/irbaby.dir/all
 	$(MAKE) -f test/CMakeFiles/http_test.dir/build.make test/CMakeFiles/http_test.dir/depend
 	$(MAKE) -f test/CMakeFiles/http_test.dir/build.make test/CMakeFiles/http_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=7,8 "Built target http_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles --progress-num=19,20 "Built target http_test"
 .PHONY : test/CMakeFiles/http_test.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/http_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 22
 	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/http_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/http_test.dir/rule

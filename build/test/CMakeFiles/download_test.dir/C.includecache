@@ -6,9 +6,37 @@
 
 #IncludeRegexTransform: 
 
+../3rdparty/IRext/include/ir_ac_control.h
+ir_defs.h
+../3rdparty/IRext/include/ir_defs.h
+
+../3rdparty/IRext/include/ir_decode.h
+stdio.h
+-
+ir_defs.h
+../3rdparty/IRext/include/ir_defs.h
+ir_ac_control.h
+../3rdparty/IRext/include/ir_ac_control.h
+ir_tv_control.h
+../3rdparty/IRext/include/ir_tv_control.h
+
+../3rdparty/IRext/include/ir_defs.h
+android/log.h
+-
+OSAL.h
+../3rdparty/IRext/include/OSAL.h
+stdlib.h
+-
+
+../3rdparty/IRext/include/ir_tv_control.h
+ir_defs.h
+../3rdparty/IRext/include/ir_defs.h
+
 ../include/irbaby.h
 status_code.h
 ../include/status_code.h
+ir_decode.h
+../include/ir_decode.h
 
 ../include/status_code.h
 

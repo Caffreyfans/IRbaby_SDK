@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 23:29:17
- * @LastEditTime: 2021-06-06 16:48:11
+ * @LastEditTime: 2021-06-15 23:07:38
  * @Description: http request test
  */
 #include "http_client.h"
@@ -24,5 +24,4 @@ int main(int argc, char *argv[])
     printf("\n");
     http_client_close(&client);
 
-    irbaby_send("new_ac_2582");
 }

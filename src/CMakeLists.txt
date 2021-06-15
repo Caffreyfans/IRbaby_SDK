@@ -5,4 +5,4 @@ set(includes
 
 add_library(irbaby ${ALL_SRCS} )
 target_include_directories(irbaby PUBLIC ${includes})
-target_link_libraries(irbaby PUBLIC coreHTTP)
+target_link_libraries(irbaby PUBLIC coreHTTP IRext)

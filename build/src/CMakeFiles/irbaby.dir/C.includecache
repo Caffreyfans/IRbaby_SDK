@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+../3rdparty/IRext/include/ir_ac_control.h
+ir_defs.h
+../3rdparty/IRext/include/ir_defs.h
+
+../3rdparty/IRext/include/ir_decode.h
+stdio.h
+-
+ir_defs.h
+../3rdparty/IRext/include/ir_defs.h
+ir_ac_control.h
+../3rdparty/IRext/include/ir_ac_control.h
+ir_tv_control.h
+../3rdparty/IRext/include/ir_tv_control.h
+
+../3rdparty/IRext/include/ir_defs.h
+android/log.h
+-
+OSAL.h
+../3rdparty/IRext/include/OSAL.h
+stdlib.h
+-
+
+../3rdparty/IRext/include/ir_tv_control.h
+ir_defs.h
+../3rdparty/IRext/include/ir_defs.h
+
 ../3rdparty/coreHTTP/coreHTTP/source/include/core_http_client.h
 stdint.h
 -
@@ -41,6 +67,8 @@ status_code.h
 ../include/irbaby.h
 status_code.h
 ../include/status_code.h
+ir_decode.h
+../include/ir_decode.h
 
 ../include/log.h
 stdio.h
@@ -59,18 +87,6 @@ types.h
 ../include/types.h
 stdint.h
 -
-
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/download.c
-download.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/download.h
-http_client.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/http_client.h
-port/storage.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/port/storage.h
-string.h
--
-log.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/log.h
 
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/irbaby.c
 irbaby.h
