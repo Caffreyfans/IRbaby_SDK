@@ -66,11 +66,11 @@ ir_decode.h
 
 ../include/status_code.h
 
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/test/http_test.c
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/test/http_test.c
 http_client.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/test/http_client.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/test/http_client.h
 stdio.h
 -
 irbaby.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/test/irbaby.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/test/irbaby.h
 
