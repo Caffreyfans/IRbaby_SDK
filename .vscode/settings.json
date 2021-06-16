@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "core_http_client.h": "c",
-        "log.h": "c",
-        "stdio.h": "c",
-        "interface.h": "c"
-    }
-}
