@@ -128,7 +128,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/DependInfo.cmake"
   "3rdparty/IRext/CMakeFiles/IRext.dir/DependInfo.cmake"
-  "src/CMakeFiles/irbaby.dir/DependInfo.cmake"
+  "src/CMakeFiles/IRbaby.dir/DependInfo.cmake"
   "test/CMakeFiles/download_test.dir/DependInfo.cmake"
   "test/CMakeFiles/http_test.dir/DependInfo.cmake"
   )

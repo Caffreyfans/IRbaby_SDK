@@ -22,7 +22,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/DependInfo.cmake"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/CMakeFiles/irbaby.dir/DependInfo.cmake"
+  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/CMakeFiles/IRbaby.dir/DependInfo.cmake"
   "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/DependInfo.cmake"
   )
 

@@ -137,17 +137,17 @@ IRext/fast:
 .PHONY : IRext/fast
 
 #=============================================================================
-# Target rules for targets named irbaby
+# Target rules for targets named IRbaby
 
 # Build rule for target.
-irbaby: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 irbaby
-.PHONY : irbaby
+IRbaby: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 IRbaby
+.PHONY : IRbaby
 
 # fast build rule for target.
-irbaby/fast:
-	$(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/build
-.PHONY : irbaby/fast
+IRbaby/fast:
+	$(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/build
+.PHONY : IRbaby/fast
 
 #=============================================================================
 # Target rules for targets named download_test
@@ -185,7 +185,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... coreHTTP"
 	@echo "... IRext"
-	@echo "... irbaby"
+	@echo "... IRbaby"
 	@echo "... download_test"
 	@echo "... http_test"
 .PHONY : help

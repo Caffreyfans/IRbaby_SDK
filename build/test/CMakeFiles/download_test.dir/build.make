@@ -80,7 +80,7 @@ download_test_EXTERNAL_OBJECTS =
 test/download_test: test/CMakeFiles/download_test.dir/download_test.c.o
 test/download_test: test/CMakeFiles/download_test.dir/build.make
 test/download_test: 3rdparty/coreHTTP/libcoreHTTP.a
-test/download_test: src/libirbaby.a
+test/download_test: src/libIRbaby.a
 test/download_test: 3rdparty/coreHTTP/libcoreHTTP.a
 test/download_test: 3rdparty/IRext/libIRext.a
 test/download_test: test/CMakeFiles/download_test.dir/link.txt

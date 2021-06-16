@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/irbaby.dir/rule:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/irbaby.dir/rule
-.PHONY : src/CMakeFiles/irbaby.dir/rule
+src/CMakeFiles/IRbaby.dir/rule:
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/IRbaby.dir/rule
+.PHONY : src/CMakeFiles/IRbaby.dir/rule
 
 # Convenience name for target.
-irbaby: src/CMakeFiles/irbaby.dir/rule
+IRbaby: src/CMakeFiles/IRbaby.dir/rule
 
-.PHONY : irbaby
+.PHONY : IRbaby
 
 # fast build rule for target.
-irbaby/fast:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/build
-.PHONY : irbaby/fast
+IRbaby/fast:
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/build
+.PHONY : IRbaby/fast
 
 download.o: download.c.o
 
@@ -131,7 +131,7 @@ download.o: download.c.o
 
 # target to build an object file
 download.c.o:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/download.c.o
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/download.c.o
 .PHONY : download.c.o
 
 download.i: download.c.i
@@ -140,7 +140,7 @@ download.i: download.c.i
 
 # target to preprocess a source file
 download.c.i:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/download.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/download.c.i
 .PHONY : download.c.i
 
 download.s: download.c.s
@@ -149,7 +149,7 @@ download.s: download.c.s
 
 # target to generate assembly for a file
 download.c.s:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/download.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/download.c.s
 .PHONY : download.c.s
 
 irbaby.o: irbaby.c.o
@@ -158,7 +158,7 @@ irbaby.o: irbaby.c.o
 
 # target to build an object file
 irbaby.c.o:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/irbaby.c.o
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/irbaby.c.o
 .PHONY : irbaby.c.o
 
 irbaby.i: irbaby.c.i
@@ -167,7 +167,7 @@ irbaby.i: irbaby.c.i
 
 # target to preprocess a source file
 irbaby.c.i:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/irbaby.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/irbaby.c.i
 .PHONY : irbaby.c.i
 
 irbaby.s: irbaby.c.s
@@ -176,8 +176,35 @@ irbaby.s: irbaby.c.s
 
 # target to generate assembly for a file
 irbaby.c.s:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/irbaby.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/irbaby.c.s
 .PHONY : irbaby.c.s
+
+port/peripherals.o: port/peripherals.c.o
+
+.PHONY : port/peripherals.o
+
+# target to build an object file
+port/peripherals.c.o:
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/port/peripherals.c.o
+.PHONY : port/peripherals.c.o
+
+port/peripherals.i: port/peripherals.c.i
+
+.PHONY : port/peripherals.i
+
+# target to preprocess a source file
+port/peripherals.c.i:
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/port/peripherals.c.i
+.PHONY : port/peripherals.c.i
+
+port/peripherals.s: port/peripherals.c.s
+
+.PHONY : port/peripherals.s
+
+# target to generate assembly for a file
+port/peripherals.c.s:
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/port/peripherals.c.s
+.PHONY : port/peripherals.c.s
 
 port/storage.o: port/storage.c.o
 
@@ -185,7 +212,7 @@ port/storage.o: port/storage.c.o
 
 # target to build an object file
 port/storage.c.o:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/port/storage.c.o
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/port/storage.c.o
 .PHONY : port/storage.c.o
 
 port/storage.i: port/storage.c.i
@@ -194,7 +221,7 @@ port/storage.i: port/storage.c.i
 
 # target to preprocess a source file
 port/storage.c.i:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/port/storage.c.i
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/port/storage.c.i
 .PHONY : port/storage.c.i
 
 port/storage.s: port/storage.c.s
@@ -203,7 +230,7 @@ port/storage.s: port/storage.c.s
 
 # target to generate assembly for a file
 port/storage.c.s:
-	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/irbaby.dir/build.make src/CMakeFiles/irbaby.dir/port/storage.c.s
+	cd /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build && $(MAKE) -f src/CMakeFiles/IRbaby.dir/build.make src/CMakeFiles/IRbaby.dir/port/storage.c.s
 .PHONY : port/storage.c.s
 
 # Help Target
@@ -214,13 +241,16 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... irbaby"
+	@echo "... IRbaby"
 	@echo "... download.o"
 	@echo "... download.i"
 	@echo "... download.s"
 	@echo "... irbaby.o"
 	@echo "... irbaby.i"
 	@echo "... irbaby.s"
+	@echo "... port/peripherals.o"
+	@echo "... port/peripherals.i"
+	@echo "... port/peripherals.s"
 	@echo "... port/storage.o"
 	@echo "... port/storage.i"
 	@echo "... port/storage.s"

@@ -10,7 +10,7 @@
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/CMakeFiles/rebuild_cache.dir
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/CMakeFiles/edit_cache.dir
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/CMakeFiles/irbaby.dir
+/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/CMakeFiles/IRbaby.dir
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/test/CMakeFiles/rebuild_cache.dir
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/test/CMakeFiles/edit_cache.dir
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/test/CMakeFiles/download_test.dir

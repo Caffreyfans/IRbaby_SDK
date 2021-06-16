@@ -80,7 +80,7 @@ http_test_EXTERNAL_OBJECTS =
 test/http_test: test/CMakeFiles/http_test.dir/http_test.c.o
 test/http_test: test/CMakeFiles/http_test.dir/build.make
 test/http_test: 3rdparty/coreHTTP/libcoreHTTP.a
-test/http_test: src/libirbaby.a
+test/http_test: src/libIRbaby.a
 test/http_test: 3rdparty/coreHTTP/libcoreHTTP.a
 test/http_test: 3rdparty/IRext/libIRext.a
 test/http_test: test/CMakeFiles/http_test.dir/link.txt

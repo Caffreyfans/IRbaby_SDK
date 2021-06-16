@@ -1,11 +1,12 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:15:05
- * @LastEditTime: 2021-06-15 23:55:10
+ * @LastEditTime: 2021-06-16 23:31:43
  * @Description: 
  */
 #include "irbaby.h"
 #include "port/storage.h"
+#include "port/peripherals.h"
 #include "download.h"
 #include <stdlib.h>
 #include "log.h"
@@ -45,6 +46,7 @@ IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status)
             IRBABY_LOG("%d ", tx_buffer[i]);
         }
         IRBABY_LOG("\n");
+        ir_send(tx_buffer, data_len, 2);
     }
     status = IRBABY_OK;
 exit:

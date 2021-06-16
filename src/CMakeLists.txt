@@ -3,6 +3,6 @@ set(includes
     "../include"
     "../include/port")
 
-add_library(irbaby ${ALL_SRCS} )
-target_include_directories(irbaby PUBLIC ${includes})
-target_link_libraries(irbaby PUBLIC coreHTTP IRext)
+add_library(IRbaby ${ALL_SRCS} )
+target_include_directories(IRbaby PUBLIC ${includes})
+target_link_libraries(IRbaby PUBLIC coreHTTP IRext)
