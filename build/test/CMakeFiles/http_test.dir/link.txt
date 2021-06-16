@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 /usr/bin/cc    CMakeFiles/http_test.dir/http_test.c.o  -o http_test  ../3rdparty/coreHTTP/libcoreHTTP.a ../src/libIRbaby.a ../3rdparty/coreHTTP/libcoreHTTP.a ../3rdparty/IRext/libIRext.a 
+=======
+/usr/bin/cc CMakeFiles/http_test.dir/http_test.c.o -o http_test  ../3rdparty/coreHTTP/libcoreHTTP.a ../src/libirbaby.a ../3rdparty/coreHTTP/libcoreHTTP.a ../3rdparty/IRext/libIRext.a 
+>>>>>>> acc7b348854bacbecda2283a21227304c6692b5c

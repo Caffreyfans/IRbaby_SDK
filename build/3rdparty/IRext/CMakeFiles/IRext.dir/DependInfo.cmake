@@ -4,17 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_ac_apply.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_apply.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_ac_binary_parse.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_binary_parse.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_ac_build_frame.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_build_frame.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_ac_control.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_control.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_ac_parse_forbidden_info.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_parse_forbidden_info.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_ac_parse_frame_info.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_parse_frame_info.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_ac_parse_parameter.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_parse_parameter.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_decode.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_decode.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_decode_test.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_decode_test.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_tv_control.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_tv_control.c.o"
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/3rdparty/IRext/ir_utils.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_utils.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_ac_apply.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_apply.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_ac_binary_parse.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_binary_parse.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_ac_build_frame.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_build_frame.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_ac_control.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_control.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_ac_parse_forbidden_info.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_parse_forbidden_info.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_ac_parse_frame_info.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_parse_frame_info.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_ac_parse_parameter.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_ac_parse_parameter.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_decode.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_decode.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_decode_test.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_decode_test.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_tv_control.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_tv_control.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/3rdparty/IRext/ir_utils.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/ir_utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

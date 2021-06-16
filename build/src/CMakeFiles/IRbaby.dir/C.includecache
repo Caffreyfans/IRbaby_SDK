@@ -92,6 +92,7 @@ types.h
 stdint.h
 -
 
+<<<<<<< HEAD:build/src/CMakeFiles/IRbaby.dir/C.includecache
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/download.c
 download.h
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/download.h
@@ -105,18 +106,45 @@ log.h
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/log.h
 
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/irbaby.c
-irbaby.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/irbaby.h
+=======
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/download.c
+download.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/download.h
+http_client.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/http_client.h
 port/storage.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/port/storage.h
+string.h
+-
+log.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/log.h
+
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/irbaby.c
+>>>>>>> acc7b348854bacbecda2283a21227304c6692b5c:build/src/CMakeFiles/irbaby.dir/C.includecache
+irbaby.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/irbaby.h
+port/storage.h
+<<<<<<< HEAD:build/src/CMakeFiles/IRbaby.dir/C.includecache
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/port/storage.h
 port/peripherals.h
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/port/peripherals.h
+=======
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/port/storage.h
+>>>>>>> acc7b348854bacbecda2283a21227304c6692b5c:build/src/CMakeFiles/irbaby.dir/C.includecache
 download.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/download.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/download.h
 stdlib.h
 -
 log.h
-/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/log.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/log.h
+
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/port/storage.c
+storage.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/port/storage.h
+stdio.h
+-
+log.h
+/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/src/port/log.h
 
 /home/caffreyfans/git/IRbaby_dev/irbaby_sdk/src/port/peripherals.c
 peripherals.h

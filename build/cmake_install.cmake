@@ -1,4 +1,4 @@
-# Install script for directory: /home/caffreyfans/git/IRbaby_dev/irbaby_sdk
+# Install script for directory: /zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,11 +37,16 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/cmake_install.cmake")
-  include("/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/cmake_install.cmake")
-  include("/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/test/cmake_install.cmake")
+  include("/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/cmake_install.cmake")
+  include("/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/src/cmake_install.cmake")
+  include("/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/test/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +58,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/test/http_test.c" "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/test/CMakeFiles/http_test.dir/http_test.c.o"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/test/http_test.c" "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/test/CMakeFiles/http_test.dir/http_test.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -21,9 +21,15 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+<<<<<<< HEAD
   "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/DependInfo.cmake"
   "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/src/CMakeFiles/IRbaby.dir/DependInfo.cmake"
   "/home/caffreyfans/git/IRbaby_dev/irbaby_sdk/build/3rdparty/IRext/CMakeFiles/IRext.dir/DependInfo.cmake"
+=======
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/coreHTTP/CMakeFiles/coreHTTP.dir/DependInfo.cmake"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/src/CMakeFiles/irbaby.dir/DependInfo.cmake"
+  "/zhsa151/usrhome/caffreyfans.miao/git/IRbaby_SDK/build/3rdparty/IRext/CMakeFiles/IRext.dir/DependInfo.cmake"
+>>>>>>> acc7b348854bacbecda2283a21227304c6692b5c
   )
 
 # Fortran module output directory.
