@@ -1,2 +1,0 @@
-/usr/bin/ar qc libIRbaby.a  CMakeFiles/IRbaby.dir/download.c.o CMakeFiles/IRbaby.dir/irbaby.c.o CMakeFiles/IRbaby.dir/port/peripherals.c.o CMakeFiles/IRbaby.dir/port/storage.c.o
-/usr/bin/ranlib libIRbaby.a
