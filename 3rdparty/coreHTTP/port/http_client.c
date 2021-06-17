@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:12:44
- * @LastEditTime: 2021-06-17 22:54:28
+ * @LastEditTime: 2021-06-17 22:57:36
  * @Description: 
  */
 #include "http_client.h"
@@ -15,7 +15,6 @@
 #else // for mbedded device
 #include "lwip/sockets.h"
 #include "lwip/dns.h"
-#include "lwip/netdb.h"
 #endif // __linux__
 #include "http_parser.h"
 #include <string.h>
@@ -195,7 +194,7 @@ uint8_t open_transport(HTTPClient *client)
        next address. */
     addr = &((struct sockaddr_in *)result->ai_addr)->sin_addr;
     LOG("DNS lookup successed. IP = %s\n", inet_ntoa(*addr));
-    int fd;
+    int fd = -1;
     for (rp = result; rp != NULL; rp = rp->ai_next)
     {
         fd = socket(rp->ai_family, rp->ai_socktype, rp->ai_protocol);
