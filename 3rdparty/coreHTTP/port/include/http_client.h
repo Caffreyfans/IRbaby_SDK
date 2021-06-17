@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:03:39
- * @LastEditTime: 2021-06-05 21:47:47
+ * @LastEditTime: 2021-06-17 22:50:08
  * @Description: coreHTTP interface porting
  */
 #ifndef INTERFACE_H_
@@ -16,7 +16,7 @@ struct NetworkContext {
 typedef struct {
     char *url;
     char *method;
-    char *payload;
+    uint8_t *payload;
     size_t payload_len;
     char *schema;
     char *host;

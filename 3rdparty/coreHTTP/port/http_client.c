@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:12:44
- * @LastEditTime: 2021-06-06 16:50:30
+ * @LastEditTime: 2021-06-17 22:54:28
  * @Description: 
  */
 #include "http_client.h"
@@ -15,6 +15,7 @@
 #else // for mbedded device
 #include "lwip/sockets.h"
 #include "lwip/dns.h"
+#include "lwip/netdb.h"
 #endif // __linux__
 #include "http_parser.h"
 #include <string.h>
