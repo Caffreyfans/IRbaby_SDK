@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:12:44
- * @LastEditTime: 2021-06-17 23:00:57
+ * @LastEditTime: 2021-06-18 00:10:17
  * @Description: 
  */
 #include "http_client.h"
@@ -16,6 +16,7 @@
 #include "lwip/sockets.h"
 #include "lwip/dns.h"
 #include "lwip/netdb.h"
+#include "lwip/sys.h"
 #endif // __linux__
 #include "http_parser.h"
 #include <string.h>
@@ -172,18 +173,15 @@ err:
 uint8_t open_transport(HTTPClient *client)
 {
 
-    /* 2. dns lookup and connect to server */
-    struct addrinfo hints;
+    const struct addrinfo hints = {
+        .ai_family = AF_INET,
+        .ai_socktype = SOCK_STREAM
+    };
     struct addrinfo *result, *rp;
     struct in_addr *addr;
-    /* obtain address(es) matching host/port */
-    hints.ai_family = AF_INET;       // Allow IPv4
-    hints.ai_socktype = SOCK_STREAM; // Datastream socket */
-    hints.ai_flags = 0;
-    hints.ai_protocol = 0;
 
     int s = getaddrinfo(client->host, client->port, &hints, &result);
-    if (s != 0)
+    if (s != 0 || result == NULL)
     {
         LOG("dns lookup failed\n");
         goto err;
