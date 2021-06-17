@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-16 22:31:40
- * @LastEditTime: 2021-06-16 23:17:51
+ * @LastEditTime: 2021-06-17 23:05:00
  * @Description: 
  */
 #include "peripherals.h"
@@ -20,10 +20,10 @@ void ir_send(uint16_t *data, int len, int pin)
     rmt_driver_install(RMT_CHANNEL_0, 0, 0);
     int i = 0, j = 0;
     while (j < len) {
-        items[i]->level0 = 1;
-        items[i]->duration0 = data[j];
-        items[i]->level1 = 0;
-        items[i]->duration1 = data[j + 1];
+        items[i].level0 = 1;
+        items[i].duration0 = data[j];
+        items[i].level1 = 0;
+        items[i].duration1 = data[j + 1];
         i++;
         j += 2;
     }
