@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:25
- * @LastEditTime: 2021-07-14 21:31:22
+ * @LastEditTime: 2021-07-15 21:47:41
  * @Description: 
  */
 #ifndef DOWNLOAD_H_
@@ -18,5 +18,5 @@
 IRBABY_STATUS irext_download(const char *filename);
 
 cJSON *irext_login(const char *app_key, const char *app_secret);
-cJSON *irext_list_brands();
+// cJSON *irext_list_brands();
 #endif

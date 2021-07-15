@@ -1,14 +1,14 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:15:05
- * @LastEditTime: 2021-06-16 23:31:43
+ * @LastEditTime: 2021-07-15 21:54:58
  * @Description: 
  */
 #include "irbaby.h"
 #include "port/storage.h"
 #include "port/peripherals.h"
-#include "download.h"
 #include <stdlib.h>
+#include "irext_api.h"
 #include "log.h"
 
 #define IR_RX_BUFFER_LEN 1024
@@ -31,7 +31,7 @@ IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status)
     int data_len = irbaby_read(filename, data_buffer, IR_TX_BUFFER_LEN);
     if (data_len == 0)
     {
-        if (irbaby_download(filename) != IRBABY_OK)
+        if (irext_download(filename) != IRBABY_OK)
         {
             goto exit;
         }
