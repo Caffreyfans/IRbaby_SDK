@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-08-02 00:03:33
+ * @LastEditTime: 2021-08-02 23:43:24
  * @Description:
  */
 #include "irext_api.h"
@@ -93,6 +93,7 @@ cJSON *irext_login(const char *app_key, const char *app_secret,
   free(root_decode);
   cJSON_Delete(root);
   root = NULL;
+  http_client_close(&client);
   return result;
 }
 
@@ -121,14 +122,63 @@ cJSON *irext_list_categories(const int id, const char *token) {
   if (http_client_send(&client)) {
     cJSON *parse = cJSON_Parse(client.response.pBody);
     if (parse != NULL) {
-      cJSON *result = cJSON_CreateObject();
-      cJSON *item = cJSON_GetObjectItem(parse, "entity");
-      for (int i = 0; i < cJSON_GetArraySize(item); i++) {
-        cJSON *tmp = cJSON_GetArrayItem(item, i);
-        cJSON_AddNumberToObject()
+      result = cJSON_CreateArray();
+      cJSON *entity = cJSON_GetObjectItem(parse, "entity");
+      for (int i = 0; i < cJSON_GetArraySize(entity); i++) {
+        cJSON *item = cJSON_GetArrayItem(entity, i);
+        cJSON *tmp = cJSON_CreateObject();
+        cJSON_AddNumberToObject(tmp, "id",
+                                cJSON_GetObjectItem(item, "id")->valueint);
+        cJSON_AddStringToObject(tmp, "name",
+                                cJSON_GetObjectItem(item, "name")->valuestring);
+        cJSON_AddItemToArray(result, tmp);
       }
+      cJSON_Delete(parse);
+      parse = NULL;
     }
   }
+  free(root_decode);
+  root_decode = NULL;
   cJSON_Delete(root);
   root = NULL;
+  http_client_close(&client);
+  return result;
+}
+
+cJSON *irext_list_brands(const int category_id, const int id,
+                         const char *token) {
+  char *suffix = "/indexing/list_brands";
+  char url[256] = {0};
+  strncpy(url, IREXT_URL_PREFIX, sizeof(url));
+  strncpy(url + IREXT_URL_PREFIX_SIZE, suffix,
+          sizeof(url) - IREXT_URL_PREFIX_SIZE);
+  cJSON *result = NULL;
+  cJSON *send = cJSON_CreateObject();
+  cJSON_AddNumberToObject(send, "id", id);
+  cJSON_AddStringToObject(send, "token", token);
+  cJSON_AddNumberToObject(send, "categoryId", category_id);
+  cJSON_AddNumberToObject(send, "from", 0);
+  cJSON_AddNumberToObject(send, "count", 0);
+  cJSON *from = cJSON_GetObjectItem(send, "from");
+  cJSON *count = cJSON_GetObjectItem(send, "count");
+  char *type_filed = "Content-Type";
+  char *type_value = "application/json;charset=utf-8";
+  for (int i = 0; i < 250; i += 10) {
+    cJSON_SetNumberValue(from, i);
+    cJSON_SetNumberValue(count, i + 10);
+    char *str = cJSON_Print(send);
+    HTTPClient client = {.url = url,
+                         .method = HTTP_METHOD_POST,
+                         .payload = str,
+                         .payload_len = strlen(str)};
+    http_client_init(&client);
+    HTTPClient_AddHeader(&client.header, type_filed, strlen(type_filed),
+                         type_value, strlen(type_value));
+    if (http_client_send(&client)) {
+      printf("%s", client.response.pBody);
+    }
+    http_client_close(&client);
+    free(str);
+  }
+  free(send);
 }
