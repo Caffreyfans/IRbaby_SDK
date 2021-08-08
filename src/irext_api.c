@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-08-02 23:43:24
+ * @LastEditTime: 2021-08-08 17:13:17
  * @Description:
  */
 #include "irext_api.h"
@@ -164,8 +164,11 @@ cJSON *irext_list_brands(const int category_id, const int id,
   char *type_filed = "Content-Type";
   char *type_value = "application/json;charset=utf-8";
   for (int i = 0; i < 250; i += 10) {
+    if (result == NULL) {
+      result = cJSON_CreateArray();
+    }
     cJSON_SetNumberValue(from, i);
-    cJSON_SetNumberValue(count, i + 10);
+    cJSON_SetNumberValue(count, 10);
     char *str = cJSON_Print(send);
     HTTPClient client = {.url = url,
                          .method = HTTP_METHOD_POST,
