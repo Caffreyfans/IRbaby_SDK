@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:25
- * @LastEditTime: 2021-08-02 23:02:37
+ * @LastEditTime: 2021-08-09 22:39:49
  * @Description: 
  */
 #ifndef DOWNLOAD_H_
@@ -23,5 +23,5 @@ cJSON *irext_list_categories(const int id, const char *token);
 
 cJSON *irext_list_brands(const int category_id, const int id, const char *token);
 
-// cJSON *irext_list_indexes(const int category_id, const int brand_id, const char *token);
+cJSON *irext_list_indexes(const int category_id, const int brand_id, const int id, const char *token);
 #endif

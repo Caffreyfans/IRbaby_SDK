@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:12:44
- * @LastEditTime: 2021-08-08 17:01:25
+ * @LastEditTime: 2021-08-09 23:14:27
  * @Description:
  */
 #include "http_client.h"
@@ -35,7 +35,7 @@
 #define HTTP_DEFAULT_PORT "80"
 #define HTTPS_DEFAULT_PORT "443"
 #define HEADER_MAX_LEN 1024
-#define RESPONSE_MAX_LEN 2048
+#define RESPONSE_MAX_LEN 20480
 
 static char *malloc_str(const char *str, size_t len) {
   if (len > 0) {

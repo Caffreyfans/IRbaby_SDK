@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-08-08 17:13:17
+ * @LastEditTime: 2021-08-09 23:03:21
  * @Description:
  */
 #include "irext_api.h"
@@ -158,9 +158,8 @@ cJSON *irext_list_brands(const int category_id, const int id,
   cJSON_AddStringToObject(send, "token", token);
   cJSON_AddNumberToObject(send, "categoryId", category_id);
   cJSON_AddNumberToObject(send, "from", 0);
-  cJSON_AddNumberToObject(send, "count", 0);
+  cJSON_AddNumberToObject(send, "count", 10);
   cJSON *from = cJSON_GetObjectItem(send, "from");
-  cJSON *count = cJSON_GetObjectItem(send, "count");
   char *type_filed = "Content-Type";
   char *type_value = "application/json;charset=utf-8";
   for (int i = 0; i < 250; i += 10) {
@@ -168,7 +167,6 @@ cJSON *irext_list_brands(const int category_id, const int id,
       result = cJSON_CreateArray();
     }
     cJSON_SetNumberValue(from, i);
-    cJSON_SetNumberValue(count, 10);
     char *str = cJSON_Print(send);
     HTTPClient client = {.url = url,
                          .method = HTTP_METHOD_POST,
@@ -183,5 +181,45 @@ cJSON *irext_list_brands(const int category_id, const int id,
     http_client_close(&client);
     free(str);
   }
-  free(send);
+  cJSON_Delete(send);
+}
+
+cJSON *irext_list_indexes(const int category_id, const int brand_id,
+                          const int id, const char *token) {
+  char *suffix = "/indexing/list_indexes";
+  char url[256] = {0};
+  strncpy(url, IREXT_URL_PREFIX, sizeof(url));
+  strncpy(url + IREXT_URL_PREFIX_SIZE, suffix,
+          sizeof(url) - IREXT_URL_PREFIX_SIZE);
+  cJSON *result = NULL;
+  cJSON *send = cJSON_CreateObject();
+  cJSON_AddNumberToObject(send, "id", id);
+  cJSON_AddStringToObject(send, "token", token);
+  cJSON_AddNumberToObject(send, "brandId", brand_id);
+  cJSON_AddNumberToObject(send, "categoryId", category_id);
+  cJSON_AddNumberToObject(send, "from", 0);
+  cJSON_AddNumberToObject(send, "count", 1);
+  cJSON *from = cJSON_GetObjectItem(send, "from");
+  char *type_filed = "Content-Type";
+  char *type_value = "application/json;charset=utf-8";
+  for (int i = 0; i < 25; i += 10) {
+    if (result == NULL) {
+      result = cJSON_CreateArray();
+    }
+    cJSON_SetNumberValue(from, i);
+    char *str = cJSON_Print(send);
+    HTTPClient client = {.url = url,
+                         .method = HTTP_METHOD_POST,
+                         .payload = str,
+                         .payload_len = strlen(str)};
+    http_client_init(&client);
+    HTTPClient_AddHeader(&client.header, type_filed, strlen(type_filed),
+                         type_value, strlen(type_value));
+    if (http_client_send(&client)) {
+      printf("%s", client.response.pBody);
+    }
+    http_client_close(&client);
+    free(str);
+  }
+  cJSON_Delete(send);
 }
