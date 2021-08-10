@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-08-09 23:03:21
+ * @LastEditTime: 2021-08-10 23:55:33
  * @Description:
  */
 #include "irext_api.h"
@@ -55,12 +55,12 @@ cJSON *irext_login(const char *app_key, const char *app_secret,
   strncpy(url, IREXT_URL_PREFIX, sizeof(url));
   strncpy(url + IREXT_URL_PREFIX_SIZE, suffix,
           sizeof(url) - IREXT_URL_PREFIX_SIZE);
-  cJSON *root = cJSON_CreateObject();
+  cJSON *send = cJSON_CreateObject();
   cJSON *result = NULL;
-  cJSON_AddStringToObject(root, "appKey", app_key);
-  cJSON_AddStringToObject(root, "appSecret", app_secret);
-  cJSON_AddStringToObject(root, "appType", app_type);
-  char *root_decode = cJSON_PrintUnformatted(root);
+  cJSON_AddStringToObject(send, "appKey", app_key);
+  cJSON_AddStringToObject(send, "appSecret", app_secret);
+  cJSON_AddStringToObject(send, "appType", app_type);
+  char *root_decode = cJSON_PrintUnformatted(send);
   HTTPClient client = {.url = url,
                        .method = HTTP_METHOD_POST,
                        .payload = root_decode,
@@ -90,10 +90,11 @@ cJSON *irext_login(const char *app_key, const char *app_secret,
       parse = NULL;
     }
   }
-  free(root_decode);
-  cJSON_Delete(root);
-  root = NULL;
   http_client_close(&client);
+  free(root_decode);
+  root_decode = NULL;
+  cJSON_Delete(send);
+  send = NULL;
   return result;
 }
 
@@ -104,12 +105,12 @@ cJSON *irext_list_categories(const int id, const char *token) {
   strncpy(url + IREXT_URL_PREFIX_SIZE, suffix,
           sizeof(url) - IREXT_URL_PREFIX_SIZE);
   cJSON *result = NULL;
-  cJSON *root = cJSON_CreateObject();
-  cJSON_AddNumberToObject(root, "id", id);
-  cJSON_AddStringToObject(root, "token", token);
-  cJSON_AddStringToObject(root, "from", "0");
-  cJSON_AddStringToObject(root, "count", "10");
-  char *root_decode = cJSON_PrintUnformatted(root);
+  cJSON *send = cJSON_CreateObject();
+  cJSON_AddNumberToObject(send, "id", id);
+  cJSON_AddStringToObject(send, "token", token);
+  cJSON_AddNumberToObject(send, "from", 0);
+  cJSON_AddNumberToObject(send, "count", 10);
+  char *root_decode = cJSON_PrintUnformatted(send);
   HTTPClient client = {.url = url,
                        .method = HTTP_METHOD_POST,
                        .payload = root_decode,
@@ -139,8 +140,8 @@ cJSON *irext_list_categories(const int id, const char *token) {
   }
   free(root_decode);
   root_decode = NULL;
-  cJSON_Delete(root);
-  root = NULL;
+  cJSON_Delete(send);
+  send = NULL;
   http_client_close(&client);
   return result;
 }
@@ -163,25 +164,45 @@ cJSON *irext_list_brands(const int category_id, const int id,
   char *type_filed = "Content-Type";
   char *type_value = "application/json;charset=utf-8";
   for (int i = 0; i < 250; i += 10) {
-    if (result == NULL) {
-      result = cJSON_CreateArray();
-    }
     cJSON_SetNumberValue(from, i);
-    char *str = cJSON_Print(send);
+    char *root_decode = cJSON_PrintUnformatted(send);
     HTTPClient client = {.url = url,
                          .method = HTTP_METHOD_POST,
-                         .payload = str,
-                         .payload_len = strlen(str)};
+                         .payload = root_decode,
+                         .payload_len = strlen(root_decode)};
     http_client_init(&client);
     HTTPClient_AddHeader(&client.header, type_filed, strlen(type_filed),
                          type_value, strlen(type_value));
     if (http_client_send(&client)) {
-      printf("%s", client.response.pBody);
+      cJSON *parse = cJSON_Parse(client.response.pBody);
+      if (result == NULL) {
+        result = cJSON_CreateObject();
+      }
+      if (parse != NULL) {
+        cJSON *entity = cJSON_GetObjectItem(parse, "entity");
+        for (int i = 0; i < cJSON_GetArraySize(entity); i++) {
+          cJSON *item = cJSON_GetArrayItem(entity, i);
+          cJSON *tmp = cJSON_CreateObject();
+          cJSON_AddNumberToObject(tmp, "id",
+                                  cJSON_GetObjectItem(item, "id")->valueint);
+          cJSON_AddStringToObject(
+              tmp, "name", cJSON_GetObjectItem(item, "name")->valuestring);
+          cJSON_AddNumberToObject(
+              tmp, "categoryId",
+              cJSON_GetObjectItem(item, "categoryId")->valueint);
+          cJSON_AddItemToArray(result, tmp);
+        }
+        cJSON_Delete(parse);
+        parse = NULL;
+      }
     }
     http_client_close(&client);
-    free(str);
+    free(root_decode);
+    root_decode = NULL;
   }
   cJSON_Delete(send);
+  send = NULL;
+  return result;
 }
 
 cJSON *irext_list_indexes(const int category_id, const int brand_id,
@@ -207,19 +228,38 @@ cJSON *irext_list_indexes(const int category_id, const int brand_id,
       result = cJSON_CreateArray();
     }
     cJSON_SetNumberValue(from, i);
-    char *str = cJSON_Print(send);
+    char *root_decode = cJSON_Print(send);
     HTTPClient client = {.url = url,
                          .method = HTTP_METHOD_POST,
-                         .payload = str,
-                         .payload_len = strlen(str)};
+                         .payload = root_decode,
+                         .payload_len = strlen(root_decode)};
     http_client_init(&client);
     HTTPClient_AddHeader(&client.header, type_filed, strlen(type_filed),
                          type_value, strlen(type_value));
     if (http_client_send(&client)) {
-      printf("%s", client.response.pBody);
+      cJSON *parse = cJSON_Parse(client.response.pBody);
+      if (result == NULL) {
+        result = cJSON_CreateObject();
+      }
+      if (parse != NULL) {
+        cJSON *entity = cJSON_GetObjectItem(parse, "entity");
+        for (int i = 0; i < cJSON_GetArraySize(entity); i++) {
+          cJSON *item = cJSON_GetArrayItem(entity, i);
+          cJSON *tmp = cJSON_CreateObject();
+          cJSON_AddStringToObject(
+              tmp, "remoteMap",
+              cJSON_GetObjectItem(item, "remoteMap")->valuestring);
+          cJSON_AddItemToArray(result, tmp);
+        }
+        cJSON_Delete(parse);
+        parse = NULL;
+      }
     }
     http_client_close(&client);
-    free(str);
+    free(root_decode);
+    root_decode = NULL;
   }
   cJSON_Delete(send);
+  send = NULL;
+  return result;
 }

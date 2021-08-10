@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:12:44
- * @LastEditTime: 2021-08-09 23:14:27
+ * @LastEditTime: 2021-08-10 23:58:29
  * @Description:
  */
 #include "http_client.h"
@@ -25,6 +25,7 @@
 #include "http_parser.h"
 
 /* implemente this print debug message */
+#define LOG
 #ifndef LOG
 #define LOG(fmt, ...) printf(fmt, ##__VA_ARGS__)
 #endif  // LOG
@@ -35,7 +36,7 @@
 #define HTTP_DEFAULT_PORT "80"
 #define HTTPS_DEFAULT_PORT "443"
 #define HEADER_MAX_LEN 1024
-#define RESPONSE_MAX_LEN 20480
+#define RESPONSE_MAX_LEN 3096
 
 static char *malloc_str(const char *str, size_t len) {
   if (len > 0) {
