@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-08-10 23:55:33
+ * @LastEditTime: 2021-08-17 21:19:04
  * @Description:
  */
 #include "irext_api.h"
@@ -219,11 +219,12 @@ cJSON *irext_list_indexes(const int category_id, const int brand_id,
   cJSON_AddNumberToObject(send, "brandId", brand_id);
   cJSON_AddNumberToObject(send, "categoryId", category_id);
   cJSON_AddNumberToObject(send, "from", 0);
-  cJSON_AddNumberToObject(send, "count", 1);
+  cJSON_AddNumberToObject(send, "count", 5);
   cJSON *from = cJSON_GetObjectItem(send, "from");
+
   char *type_filed = "Content-Type";
   char *type_value = "application/json;charset=utf-8";
-  for (int i = 0; i < 25; i += 10) {
+  for (int i = 0; i < 50; i += 5) {
     if (result == NULL) {
       result = cJSON_CreateArray();
     }

@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 23:29:17
- * @LastEditTime: 2021-08-11 00:04:25
+ * @LastEditTime: 2021-08-17 21:21:45
  * @Description: http request test
  */
 #include "irext_api.h"
@@ -18,12 +18,15 @@ int main(int argc, char *argv[]) {
   cJSON *brands_obj = irext_list_brands(1, id_num, token_str);
   cJSON *indexes_obj = irext_list_indexes(1, 1, id_num, token_str);
   
-  char *str = cJSON_Print(categories_obj);
-  printf("%s", str);
-  str = cJSON_Print(brands_obj);
-  printf("%s", str);
-  str = cJSON_Print(indexes_obj);
-  printf("%s", str);
+  char *str = cJSON_PrintUnformatted(categories_obj);
+  printf("%s\n", str);
+  free(str);
+  str = cJSON_PrintUnformatted(brands_obj);
+  printf("%s\n", str);
+  free(str);
+  str = cJSON_PrintUnformatted(indexes_obj);
+  printf("%s\n", str);
+  free(str);
 
   cJSON_Delete(categories_obj);
   cJSON_Delete(token_obj);
