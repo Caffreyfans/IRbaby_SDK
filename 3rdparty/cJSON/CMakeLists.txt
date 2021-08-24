@@ -1,6 +1,6 @@
-set( srcs ${CMAKE_CURRENT_LIST_DIR}/cJSON/cJSON.c) 
+set( srcs cJSON/cJSON.c) 
 
-set( includes ${CMAKE_CURRENT_LIST_DIR}/cJSON/)
+set( includes "cJSON")
 
 add_library(cJSON  STATIC ${srcs})
 
