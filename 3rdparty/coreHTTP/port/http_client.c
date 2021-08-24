@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:12:44
- * @LastEditTime: 2021-08-24 22:57:16
+ * @LastEditTime: 2021-08-24 23:08:24
  * @Description:
  */
 #include "http_client.h"
@@ -165,7 +165,6 @@ uint8_t open_transport(HTTPClient *client) {
   const struct addrinfo hints = {.ai_family = AF_INET,
                                  .ai_socktype = SOCK_STREAM};
   struct addrinfo *result, *rp;
-  struct in_addr *addr;
 
   int s = getaddrinfo(client->host, client->port, &hints, &result);
   if (s != 0 || result == NULL) {
@@ -177,7 +176,7 @@ uint8_t open_transport(HTTPClient *client) {
      Try each address until we successfully connect.
      If socket fails, we close the socket and try the
      next address. */
-  addr = &((struct sockaddr_in *)result->ai_addr)->sin_addr;
+  struct in_addr *addr = &((struct sockaddr_in *)result->ai_addr)->sin_addr;
   LOG("DNS lookup successed. IP = %s\n", inet_ntoa(*addr));
   int fd = -1;
   for (rp = result; rp != NULL; rp = rp->ai_next) {
