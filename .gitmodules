@@ -1,6 +1,3 @@
 [submodule "3rdparty/coreHTTP/coreHTTP"]
 	path = 3rdparty/coreHTTP/coreHTTP
 	url = https://github.com/FreeRTOS/coreHTTP.git
-[submodule "3rdparty/cJSON"]
-	path = 3rdparty/cJSON
-	url = https://github.com/DaveGamble/cJSON.git
