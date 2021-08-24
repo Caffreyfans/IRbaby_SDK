@@ -2,6 +2,6 @@ set( srcs cJSON/cJSON.c)
 
 set( includes "cJSON")
 
-add_library(cJSON  STATIC ${srcs})
+add_library(cjson  STATIC ${srcs})
 
-target_include_directories(cJSON PUBLIC ${includes})
+target_include_directories(cjson PUBLIC ${includes})
