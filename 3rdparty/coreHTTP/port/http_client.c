@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-04 22:12:44
- * @LastEditTime: 2021-08-17 21:09:25
+ * @LastEditTime: 2021-08-24 22:57:16
  * @Description:
  */
 #include "http_client.h"
@@ -25,7 +25,7 @@
 #include "http_parser.h"
 
 /* implemente this print debug message */
-#define LOG
+#define LOG(fmt, ...)
 #ifndef LOG
 #define LOG(fmt, ...) printf(fmt, ##__VA_ARGS__)
 #endif  // LOG
