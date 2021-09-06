@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-09-06 22:24:25
+ * @LastEditTime: 2021-09-06 22:52:47
  * @Description:
  */
 #include "irext_api.h"
@@ -113,7 +113,7 @@ cJSON *irext_list_categories(const int id, const char *token) {
   char *root_decode = cJSON_PrintUnformatted(send);
   HTTPClient client = {.url = url,
                        .method = HTTP_METHOD_POST,
-                       .payload = root_decode,
+                       .payload = (uint8_t *)root_decode,
                        .payload_len = strlen(root_decode)};
   http_client_init(&client);
   char *type_filed = "Content-Type";
@@ -121,7 +121,7 @@ cJSON *irext_list_categories(const int id, const char *token) {
   HTTPClient_AddHeader(&client.header, type_filed, strlen(type_filed),
                        type_value, strlen(type_value));
   if (http_client_send(&client)) {
-    cJSON *parse = cJSON_Parse(client.response.pBody);
+    cJSON *parse = cJSON_Parse((char *)client.response.pBody);
     if (parse != NULL) {
       result = cJSON_CreateArray();
       cJSON *entity = cJSON_GetObjectItem(parse, "entity");
@@ -168,13 +168,13 @@ cJSON *irext_list_brands(const int category_id, const int id,
     char *root_decode = cJSON_PrintUnformatted(send);
     HTTPClient client = {.url = url,
                          .method = HTTP_METHOD_POST,
-                         .payload = root_decode,
+                         .payload = (uint8_t *)root_decode,
                          .payload_len = strlen(root_decode)};
     http_client_init(&client);
     HTTPClient_AddHeader(&client.header, type_filed, strlen(type_filed),
                          type_value, strlen(type_value));
     if (http_client_send(&client)) {
-      cJSON *parse = cJSON_Parse(client.response.pBody);
+      cJSON *parse = cJSON_Parse((char *)client.response.pBody);
       if (result == NULL) {
         result = cJSON_CreateObject();
       }
@@ -232,13 +232,13 @@ cJSON *irext_list_indexes(const int category_id, const int brand_id,
     char *root_decode = cJSON_Print(send);
     HTTPClient client = {.url = url,
                          .method = HTTP_METHOD_POST,
-                         .payload = root_decode,
+                         .payload = (uint8_t *)root_decode,
                          .payload_len = strlen(root_decode)};
     http_client_init(&client);
     HTTPClient_AddHeader(&client.header, type_filed, strlen(type_filed),
                          type_value, strlen(type_value));
     if (http_client_send(&client)) {
-      cJSON *parse = cJSON_Parse(client.response.pBody);
+      cJSON *parse = cJSON_Parse((char *)client.response.pBody);
       if (result == NULL) {
         result = cJSON_CreateObject();
       }
