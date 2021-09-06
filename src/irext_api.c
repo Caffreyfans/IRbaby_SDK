@@ -1,7 +1,7 @@
 /*
  * @Author: Caffreyfans
  * @Date: 2021-06-06 15:46:30
- * @LastEditTime: 2021-08-17 21:19:04
+ * @LastEditTime: 2021-09-06 22:24:25
  * @Description:
  */
 #include "irext_api.h"
@@ -63,7 +63,7 @@ cJSON *irext_login(const char *app_key, const char *app_secret,
   char *root_decode = cJSON_PrintUnformatted(send);
   HTTPClient client = {.url = url,
                        .method = HTTP_METHOD_POST,
-                       .payload = root_decode,
+                       .payload = (uint8_t *)root_decode,
                        .payload_len = strlen(root_decode)};
   http_client_init(&client);
   char *type_filed = "Content-Type";
@@ -72,7 +72,7 @@ cJSON *irext_login(const char *app_key, const char *app_secret,
                        type_value, strlen(type_value));
 
   if (http_client_send(&client)) {
-    cJSON *parse = cJSON_Parse(client.response.pBody);
+    cJSON *parse = cJSON_Parse((char *)client.response.pBody);
     if (parse != NULL) {
       result = cJSON_CreateObject();
 
