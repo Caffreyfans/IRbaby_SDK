@@ -1,7 +1,5 @@
-set( srcs cJSON/cJSON.c) 
-
-set( includes "cJSON")
+file (GLOB srcs "cJSON/*.c")
 
 add_library(cjson  STATIC ${srcs})
 
-target_include_directories(cjson PUBLIC ${includes})
+target_include_directories(cjson PUBLIC "cJSON")
