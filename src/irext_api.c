@@ -243,7 +243,6 @@ cJSON *irext_list_indexes(const int category_id, const int brand_id,
       }
       if (parse != NULL) {
         cJSON *entity = cJSON_GetObjectItem(parse, "entity");
-        printf(cJSON_Print(entity));
         for (int i = 0; i < cJSON_GetArraySize(entity); i++) {
           cJSON *item = cJSON_GetArrayItem(entity, i);
           cJSON *tmp = cJSON_CreateObject();
