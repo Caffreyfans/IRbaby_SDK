@@ -6,14 +6,13 @@
  */
 #include "irext_api.h"
 
-#include <malloc.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "http_client.h"
 #include "log.h"
 #include "port/storage.h"
-
 #define URL_MAX_LEN 128
 
 #define IREXT_URL_PREFIX "http://irext.net/irext-server"
@@ -176,20 +175,20 @@ cJSON *irext_list_brands(const int category_id, const int id,
     if (http_client_send(&client)) {
       cJSON *parse = cJSON_Parse((char *)client.response.pBody);
       if (result == NULL) {
-        result = cJSON_CreateObject();
+        result = cJSON_CreateArray();
       }
       if (parse != NULL) {
         cJSON *entity = cJSON_GetObjectItem(parse, "entity");
         for (int i = 0; i < cJSON_GetArraySize(entity); i++) {
           cJSON *item = cJSON_GetArrayItem(entity, i);
           cJSON *tmp = cJSON_CreateObject();
-          cJSON_AddNumberToObject(tmp, "id",
+          cJSON_AddNumberToObject(tmp, "value",
                                   cJSON_GetObjectItem(item, "id")->valueint);
           cJSON_AddStringToObject(
-              tmp, "name", cJSON_GetObjectItem(item, "name")->valuestring);
-          cJSON_AddNumberToObject(
-              tmp, "categoryId",
-              cJSON_GetObjectItem(item, "categoryId")->valueint);
+              tmp, "label", cJSON_GetObjectItem(item, "name")->valuestring);
+          // cJSON_AddNumberToObject(
+          // tmp, "categoryId",
+          // cJSON_GetObjectItem(item, "categoryId")->valueint);
           cJSON_AddItemToArray(result, tmp);
         }
         cJSON_Delete(parse);
@@ -244,11 +243,15 @@ cJSON *irext_list_indexes(const int category_id, const int brand_id,
       }
       if (parse != NULL) {
         cJSON *entity = cJSON_GetObjectItem(parse, "entity");
+        printf(cJSON_Print(entity));
         for (int i = 0; i < cJSON_GetArraySize(entity); i++) {
           cJSON *item = cJSON_GetArrayItem(entity, i);
           cJSON *tmp = cJSON_CreateObject();
+          cJSON_AddNumberToObject(
+              tmp, "value",
+              atoi(cJSON_GetObjectItem(item, "remote")->valuestring));
           cJSON_AddStringToObject(
-              tmp, "remoteMap",
+              tmp, "label",
               cJSON_GetObjectItem(item, "remoteMap")->valuestring);
           cJSON_AddItemToArray(result, tmp);
         }
