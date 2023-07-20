@@ -11,7 +11,6 @@
 #define IR_SEND_BUFFER_SIZE 512
 
 void ir_send(uint16_t *data, int len, int pin) {
-#if ESP32 || ESP8266
   rmt_item32_t items[IR_SEND_BUFFER_SIZE];
   rmt_config_t config = RMT_DEFAULT_CONFIG_TX(pin, RMT_CHANNEL_0);
   config.tx_config.loop_en = false;
@@ -31,7 +30,6 @@ void ir_send(uint16_t *data, int len, int pin) {
   int items_len = len / 2;
   rmt_write_items(RMT_CHANNEL_0, items, items_len, false);
   rmt_driver_uninstall(RMT_CHANNEL_0);
-#endif
 }
 
 void ir_recv(uint16_t *data, int len, int pin) {
