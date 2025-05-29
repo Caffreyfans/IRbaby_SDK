@@ -10,7 +10,7 @@
 
 #include "log.h"
 #include "string.h"
-#define STORAGE_PREFIX "/IRbaby/"
+#define STORAGE_PREFIX "/spiffs/"
 
 size_t irbaby_read(const char *filename, uint8_t *buffer, size_t len) {
   size_t error = 0;

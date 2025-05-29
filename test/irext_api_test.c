@@ -10,8 +10,8 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  cJSON *token_obj = irext_login("cdf33048c9dbef2962b0f915bc7e420c",
-                                 "f00f57af376c66ca1355cfe109400dd2", "2");
+  cJSON *token_obj = irext_login("00567968d9316665fe5180fa2b1a24aa",
+                                  "6a111f71549eb485e616252f208017f4", "2");
   char *token_str = cJSON_GetObjectItem(token_obj, "token")->valuestring;
   int id_num = cJSON_GetObjectItem(token_obj, "id")->valueint;
   cJSON *categories_obj = irext_list_categories(id_num, token_str);

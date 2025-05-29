@@ -15,14 +15,14 @@
 #define IR_TX_BUFFER_LEN 1024
 #define data_buffer_BUFFER_LEN 1024
 
-IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status)
+IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status, int pin)
 {
     IRBABY_STATUS status = IRBABY_FAIL;
     uint16_t *tx_buffer = NULL;
     uint8_t *data_buffer = NULL;
     int ret = (
-        ((data_buffer = (uint8_t *)calloc(sizeof(uint8_t), IR_TX_BUFFER_LEN)) != NULL) &&
-        ((tx_buffer = (uint16_t *)calloc(sizeof(uint16_t), data_buffer_BUFFER_LEN)) != NULL)
+        ((data_buffer = (uint8_t *)calloc(1, IR_TX_BUFFER_LEN)) != NULL) &&
+        ((tx_buffer = (uint16_t *)calloc(2, data_buffer_BUFFER_LEN)) != NULL)
     );
     if (!ret) {
         IRBABY_LOG("calloc failed\n");
@@ -46,7 +46,7 @@ IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status)
             IRBABY_LOG("%d ", tx_buffer[i]);
         }
         IRBABY_LOG("\n");
-        ir_send(tx_buffer, data_len, 2);
+        ir_send(tx_buffer, data_len, pin);
     }
     status = IRBABY_OK;
 exit:

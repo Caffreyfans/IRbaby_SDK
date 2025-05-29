@@ -8,7 +8,7 @@
 #define IRBABY_H_
 #include "status_code.h"
 #include "ir_decode.h"
-IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *status);
+IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *status, int pin);
 
 IRBABY_STATUS irbaby_record(const char *filename);
 #endif // IRBABY_H_
