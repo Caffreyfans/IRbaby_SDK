@@ -39,14 +39,14 @@ IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status, i
         data_len = irbaby_read(filename, data_buffer, IR_TX_BUFFER_LEN);
     }
     if (ac_status != NULL) {
-        IRBABY_LOG("data_len = %d\n", data_len);
-        ir_binary_open(REMOTE_CATEGORY_AC, 1, data_buffer, data_len);
+        uint8_t ret = ir_binary_open(REMOTE_CATEGORY_AC, 1, data_buffer, data_len);
         uint16_t tx_len = ir_decode(0, tx_buffer, ac_status, 0);
+        IRBABY_LOG("decode %s data len = %d\n", ret == IR_DECODE_SUCCEEDED ? "SUCCESS" : "FAILED", tx_len);
         for (int i = 0; i < tx_len; i++) {
             IRBABY_LOG("%d ", tx_buffer[i]);
         }
         IRBABY_LOG("\n");
-        ir_send(tx_buffer, data_len, pin);
+        ir_send(tx_buffer, data_len);
     }
     status = IRBABY_OK;
 exit:
