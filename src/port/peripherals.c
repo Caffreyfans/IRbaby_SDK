@@ -110,7 +110,7 @@ void ir_send(uint16_t *data, int len)
     i++;
     j += 2;
   }
-  ESP_LOGI(TAG, "rmt start i * sizeof(rmt_symbol_word_t) = %d", i * sizeof(rmt_symbol_word_t));
+  ESP_LOGI(TAG, "rmt start send length %d", i * 2);
   rmt_transmit(tx_channel, encoder, items, i * sizeof(rmt_symbol_word_t), &transmit_config);
   rmt_tx_wait_all_done(tx_channel, portMAX_DELAY);
   ESP_LOGI(TAG, "rmt end");
