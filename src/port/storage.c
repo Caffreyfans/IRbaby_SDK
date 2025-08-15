@@ -43,7 +43,6 @@ size_t irbaby_write(const char *filename, const uint8_t *buffer, size_t len) {
   strcpy(tmp, STORAGE_PREFIX);
   strcpy(tmp + strlen(STORAGE_PREFIX), filename);
   FILE *f = fopen(tmp, "wb");
-  IRBABY_LOG("write %s\n", tmp);
   if (f == NULL) {
     IRBABY_LOG("open write file fails\n");
     return error;
