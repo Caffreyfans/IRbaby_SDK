@@ -15,7 +15,7 @@
 #define IR_TX_BUFFER_LEN 1024
 #define data_buffer_BUFFER_LEN 1024
 
-IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status, int pin)
+IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status, int pin, int change_wind_dir)
 {
     IRBABY_STATUS status = IRBABY_FAIL;
     uint16_t *tx_buffer = NULL;
@@ -40,7 +40,7 @@ IRBABY_STATUS irbaby_send(const char *filename, t_remote_ac_status *ac_status, i
     if (ac_status != NULL)
     {
         uint8_t ret = ir_binary_open(REMOTE_CATEGORY_AC, 1, data_buffer, data_len);
-        uint16_t tx_len = ir_decode(0, tx_buffer, ac_status, 0);
+        uint16_t tx_len = ir_decode(0, tx_buffer, ac_status, change_wind_dir);
         IRBABY_LOG("decode %s data len = %d\n", ret == IR_DECODE_SUCCEEDED ? "SUCCESS" : "FAILED", tx_len);
         for (int i = 0; i < tx_len; i++)
         {

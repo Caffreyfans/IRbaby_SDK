@@ -24,5 +24,6 @@ void ir_send(uint16_t *data, int len);
  */
 void ir_recv(uint16_t *data, int len); 
 
+void ir_send_incoming();
 int ir_receive();
 #endif

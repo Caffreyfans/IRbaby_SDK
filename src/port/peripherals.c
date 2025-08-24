@@ -48,6 +48,7 @@ void ir_init(int tx_pin, int rx_pin)
     rmt_disable(rx_channel);
     rmt_del_channel(rx_channel);
   }
+
   ESP_LOGI(TAG, "create RMT TX channel pin %d", tx_pin);
   rmt_tx_channel_config_t tx_channel_cfg = {
       .clk_src = RMT_CLK_SRC_DEFAULT,
@@ -60,7 +61,6 @@ void ir_init(int tx_pin, int rx_pin)
   };
   ESP_ERROR_CHECK(rmt_new_tx_channel(&tx_channel_cfg, &tx_channel));
 
-  ESP_LOGI(TAG, "modulate carrier to TX channel");
   rmt_carrier_config_t carrier_cfg = {
       .duty_cycle = 0.33,
       .frequency_hz = 38000, // 38KHz
@@ -69,31 +69,29 @@ void ir_init(int tx_pin, int rx_pin)
 
   ESP_ERROR_CHECK(rmt_enable(tx_channel));
 
-  ESP_LOGI(TAG, "install IR encoder");
   rmt_copy_encoder_config_t config = {};
   rmt_new_copy_encoder(&config, &encoder);
 
-  // ESP_LOGI(TAG, "create RMT RX channel");
-  // rmt_rx_channel_config_t rx_channel_cfg = {
-  //     .clk_src = RMT_CLK_SRC_DEFAULT,
-  //     .resolution_hz = EXAMPLE_IR_RESOLUTION_HZ,
-  //     .mem_block_symbols = 64, // amount of RMT symbols that the channel can store at a time
-  //     .gpio_num = 19,
-  // };
-  // rmt_channel_handle_t rx_channel = NULL;
-  // ESP_ERROR_CHECK(rmt_new_rx_channel(&rx_channel_cfg, &rx_channel));
+  ESP_LOGI(TAG, "create RMT RX channel pin %d", rx_pin);
+  rmt_rx_channel_config_t rx_channel_cfg = {
+      .clk_src = RMT_CLK_SRC_DEFAULT,
+      .resolution_hz = EXAMPLE_IR_RESOLUTION_HZ,
+      .mem_block_symbols = 64, // amount of RMT symbols that the channel can store at a time
+      .gpio_num = rx_pin,
+      // .flags.invert_in = true,
+  };
+  ESP_ERROR_CHECK(rmt_new_rx_channel(&rx_channel_cfg, &rx_channel));
 
-  // ESP_LOGI(TAG, "register RX done callback");
-  // receive_queue = xQueueCreate(1, sizeof(rmt_rx_done_event_data_t));
-  // assert(receive_queue);
-  // rmt_rx_event_callbacks_t cbs = {
-  //     .on_recv_done = rmt_rx_done_callback,
-  // };
-  // ESP_ERROR_CHECK(rmt_rx_register_event_callbacks(rx_channel, &cbs, receive_queue));
-  // ESP_ERROR_CHECK(rmt_enable(rx_channel));
+  receive_queue = xQueueCreate(1, sizeof(rmt_rx_done_event_data_t));
+  assert(receive_queue);
+  rmt_rx_event_callbacks_t cbs = {
+      .on_recv_done = rmt_rx_done_callback,
+  };
+  ESP_ERROR_CHECK(rmt_rx_register_event_callbacks(rx_channel, &cbs, receive_queue));
+  ESP_ERROR_CHECK(rmt_enable(rx_channel));
 }
 
-rmt_symbol_word_t items[512];
+rmt_symbol_word_t items[1024];
 // this example won't send NEC frames in a loop
 rmt_transmit_config_t transmit_config = {
     .loop_count = 0, // no loop
@@ -118,6 +116,8 @@ void ir_recv(uint16_t *data, int len)
 {
 }
 
+rmt_symbol_word_t recv_symbols[1024]; // 64 symbols should be sufficient for a standard NEC frame
+rmt_rx_done_event_data_t rx_data;
 int ir_receive()
 {
   // the following timing requirement is based on NEC protocol
@@ -126,21 +126,24 @@ int ir_receive()
       .signal_range_max_ns = 12000000, // the longest duration for NEC signal is 9000us, 12000000ns > 9000us, the receive won't stop early
   };
   // save the received RMT symbols
-  rmt_symbol_word_t raw_symbols[64]; // 64 symbols should be sufficient for a standard NEC frame
-  rmt_rx_done_event_data_t rx_data;
+  ESP_ERROR_CHECK(rmt_receive(rx_channel, recv_symbols, sizeof(recv_symbols), &receive_config));
   while (1)
   {
-    ESP_ERROR_CHECK(rmt_receive(rx_channel, raw_symbols, sizeof(raw_symbols), &receive_config));
-
     if (xQueueReceive(receive_queue, &rx_data, pdMS_TO_TICKS(1000)) == pdPASS)
     {
-      ESP_LOGI(TAG, "Receive IR:");
+      ESP_LOGI(TAG, "Receive IR %d:", rx_data.num_symbols * 2);
       for (int i = 0; i < rx_data.num_symbols; i++)
       {
         printf("%d %d ", rx_data.received_symbols[i].duration0, rx_data.received_symbols[i].duration1);
       }
       printf("\r\n");
-      ESP_ERROR_CHECK(rmt_receive(rx_channel, raw_symbols, sizeof(raw_symbols), &receive_config));
+      ESP_ERROR_CHECK(rmt_receive(rx_channel, recv_symbols, sizeof(recv_symbols), &receive_config));
     }
   }
+}
+
+void ir_send_incoming()
+{
+  ESP_LOGI(TAG, "Send Last Receive signal %d", rx_data.num_symbols * 2);
+  rmt_transmit(tx_channel, encoder, recv_symbols, rx_data.num_symbols * sizeof(rmt_symbol_word_t), &transmit_config);
 }
