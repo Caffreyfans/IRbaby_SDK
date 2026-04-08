@@ -11,6 +11,7 @@
 #include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include <string.h>
 #define IR_SEND_BUFFER_SIZE 512
 
 #define TAG "IRbaby Peripherals"
@@ -112,8 +113,18 @@ void ir_send(uint16_t *data, int len)
   rmt_tx_wait_all_done(tx_channel, portMAX_DELAY);
 }
 
+rmt_symbol_word_t recv_symbols[1024]; // 64 symbols should be sufficient for a standard NEC frame
+rmt_rx_done_event_data_t rx_data;
+uint16_t recv_data[1024];
+int recv_len = 0;
+
 void ir_recv(uint16_t *data, int len)
 {
+  if (recv_len > 0 && data != NULL) {
+    int copy_len = recv_len < len ? recv_len : len;
+    memcpy(data, recv_data, copy_len * sizeof(uint16_t));
+    recv_len = 0; // clear after copy
+  }
 }
 
 rmt_symbol_word_t recv_symbols[1024]; // 64 symbols should be sufficient for a standard NEC frame
@@ -132,8 +143,11 @@ int ir_receive()
     if (xQueueReceive(receive_queue, &rx_data, pdMS_TO_TICKS(1000)) == pdPASS)
     {
       ESP_LOGI(TAG, "Receive IR %d:", rx_data.num_symbols * 2);
+      recv_len = rx_data.num_symbols * 2;
       for (int i = 0; i < rx_data.num_symbols; i++)
       {
+        recv_data[i*2] = rx_data.received_symbols[i].duration0;
+        recv_data[i*2 + 1] = rx_data.received_symbols[i].duration1;
         printf("%d %d ", rx_data.received_symbols[i].duration0, rx_data.received_symbols[i].duration1);
       }
       printf("\r\n");
