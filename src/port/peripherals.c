@@ -12,6 +12,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include <string.h>
+#include "soc/soc_caps.h"
 #define IR_SEND_BUFFER_SIZE 512
 
 #define TAG "IRbaby Peripherals"
@@ -19,6 +20,18 @@
 #define NEC_PAYLOAD_DURATION_0 560
 #define NEC_PAYLOAD_DURATION_1 1690
 #define IR_NEC_DECODE_MARGIN 200 // Tolerance for parsing RMT symbols into bit stream
+
+#if SOC_RMT_SUPPORTED
+
+#ifndef RMT_CLK_SRC_DEFAULT
+#if SOC_RMT_SUPPORT_APB
+#define RMT_CLK_SRC_DEFAULT RMT_CLK_SRC_APB
+#elif SOC_RMT_SUPPORT_XTAL
+#define RMT_CLK_SRC_DEFAULT RMT_CLK_SRC_XTAL
+#elif SOC_RMT_SUPPORT_RC_FAST
+#define RMT_CLK_SRC_DEFAULT RMT_CLK_SRC_RC_FAST
+#endif
+#endif
 
 rmt_encoder_handle_t encoder = NULL;
 rmt_channel_handle_t tx_channel = NULL;
@@ -127,8 +140,6 @@ void ir_recv(uint16_t *data, int len)
   }
 }
 
-rmt_symbol_word_t recv_symbols[1024]; // 64 symbols should be sufficient for a standard NEC frame
-rmt_rx_done_event_data_t rx_data;
 int ir_receive()
 {
   // the following timing requirement is based on NEC protocol
@@ -161,3 +172,33 @@ void ir_send_incoming()
   ESP_LOGI(TAG, "Send Last Receive signal %d", rx_data.num_symbols * 2);
   rmt_transmit(tx_channel, encoder, recv_symbols, rx_data.num_symbols * sizeof(rmt_symbol_word_t), &transmit_config);
 }
+
+#else
+
+void ir_init(int tx_pin, int rx_pin)
+{
+  ESP_LOGW(TAG, "RMT is not supported on this target; IR TX pin %d and RX pin %d are disabled", tx_pin, rx_pin);
+}
+
+void ir_send(uint16_t *data, int len)
+{
+  ESP_LOGW(TAG, "RMT is not supported on this target; drop IR send request (%d entries)", len);
+}
+
+void ir_recv(uint16_t *data, int len)
+{
+}
+
+int ir_receive()
+{
+  ESP_LOGW(TAG, "RMT is not supported on this target; IR receive is disabled");
+  vTaskDelay(portMAX_DELAY);
+  return -1;
+}
+
+void ir_send_incoming()
+{
+  ESP_LOGW(TAG, "RMT is not supported on this target; no received IR signal to send");
+}
+
+#endif
